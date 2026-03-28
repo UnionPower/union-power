@@ -1,0 +1,58 @@
+{
+  "pageTitle": "Co nabízíme",
+  "pageDescription": "Komplexní služby v oblasti zpracování plastů od návrhu po hotový výrobek.",
+  "services": [
+    {
+      "number": "01",
+      "tag": "Hlavní služba",
+      "title": "Vstřikování termoplastů",
+      "description": "Vstřikování plastů je náš hlavní obor. Disponujeme moderními vstřikovacími lisy Arburg, které umožňují výrobu dílů různých velikostí a složitostí.",
+      "features": [
+        "Uzavírací síla lisů od 50 do 800 tun",
+        "PP, PE, PA, ABS, PC, POM a dalších 300+ materiálů",
+        "Prototypová i velkosériová výroba",
+        "Vícekomponentní vstřikování"
+      ],
+      "image": "/images/lisy.jpg"
+    },
+    {
+      "number": "02",
+      "tag": "Nástrojárna",
+      "title": "Výroba a údržba forem",
+      "description": "Vlastní nástrojárna nám umožňuje kompletní servis vstřikovacích forem — od konstrukčního návrhu přes výrobu až po údržbu a opravy.",
+      "features": [
+        "Konstrukční návrhy forem (CAD/CAM)",
+        "Výroba jednoduchých i vícenásobných forem",
+        "Pravidelná údržba a opravy nástrojů",
+        "Technická konzultace při vývoji produktu"
+      ],
+      "image": "/images/arburg-formy.jpg"
+    },
+    {
+      "number": "03",
+      "tag": "Kompletace",
+      "title": "Montáž a kompletace",
+      "description": "Kromě výroby plastových dílů nabízíme následné operace — montáž sestav, kompletaci, balení a logistiku.",
+      "features": [
+        "Montáž plastových sestav",
+        "Potisk a značení (tamponový tisk, laser)",
+        "Balení dle specifikace zákazníka",
+        "Logistika a dodání na místo"
+      ],
+      "image": "/images/hala.jpg"
+    },
+    {
+      "number": "04",
+      "tag": "Kvalita",
+      "title": "Kontrola kvality",
+      "description": "Důsledná kontrola kvality je základem naší výroby. Každý díl prochází kontrolním procesem zajišťujícím shodu s parametry.",
+      "features": [
+        "Vstupní kontrola materiálu",
+        "Mezioperační kontrola výroby",
+        "3D rozměrová kontrola",
+        "Výstupní kontrola a dokumentace"
+      ],
+      "image": "/images/arburg-detail.jpg"
+    }
+  ]
+}

@@ -48,6 +48,26 @@ collections:
               - { label: "Název", name: "title", widget: "string" }
               - { label: "Popis", name: "subtitle", widget: "string" }
 
+      - name: services
+        label: Služby
+        file: src/data/services.json
+        fields:
+          - { label: "Nadpis stránky", name: "pageTitle", widget: "string" }
+          - { label: "Popis stránky", name: "pageDescription", widget: "string" }
+          - label: "Služby"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Číslo", name: "number", widget: "string" }
+              - { label: "Štítek", name: "tag", widget: "string" }
+              - { label: "Název", name: "title", widget: "string" }
+              - { label: "Popis", name: "description", widget: "text" }
+              - { label: "Obrázek", name: "image", widget: "image" }
+              - label: "Vlastnosti"
+                name: "features"
+                widget: "list"
+                field: { label: "Text", name: "text", widget: "string" }
+
       - name: about
         label: O nás
         file: src/data/about.json
