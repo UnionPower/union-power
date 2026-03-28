@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import contact from '../data/contact.json';
 ---
 
 <Layout title="Kontakt" description="Kontaktujte Union Power s.r.o. – poptávky, dotazy, návštěva provozovny.">
@@ -37,13 +38,13 @@ import Layout from '../layouts/Layout.astro';
               <div>
                 <h3 class="font-bold text-primary text-sm uppercase tracking-wide">Sídlo a fakturační údaje</h3>
                 <p class="text-gray-medium text-sm mt-1.5 leading-relaxed">
-                  Union Power s.r.o.<br>
-                  Bartolomějská 305/3<br>
-                  110 00 Praha 1 – Staré Město
+                  {contact.headquarters.company}<br>
+                  {contact.headquarters.street}<br>
+                  {contact.headquarters.city}
                 </p>
                 <p class="text-gray-medium text-sm mt-3 leading-relaxed">
-                  IČ: 29092264 &nbsp;|&nbsp; DIČ: CZ29092264<br>
-                  <span class="text-xs">Městský soud v Praze, oddíl C, vložka 164110</span>
+                  IČ: {contact.headquarters.ico} &nbsp;|&nbsp; DIČ: {contact.headquarters.dic}<br>
+                  <span class="text-xs">{contact.headquarters.register}</span>
                 </p>
               </div>
             </div>
@@ -58,8 +59,8 @@ import Layout from '../layouts/Layout.astro';
               <div>
                 <h3 class="font-bold text-primary text-sm uppercase tracking-wide">Adresa provozovny</h3>
                 <p class="text-gray-medium text-sm mt-1.5 leading-relaxed">
-                  Prof. Seemana 132<br>
-                  507 03 Vysoké Veselí
+                  {contact.office.street}<br>
+                  {contact.office.city}
                 </p>
               </div>
             </div>
@@ -72,7 +73,7 @@ import Layout from '../layouts/Layout.astro';
               </div>
               <div>
                 <h3 class="font-bold text-primary text-sm uppercase tracking-wide">E-mail</h3>
-                <p class="text-gray-medium text-sm mt-1.5">info@unionpower.cz</p>
+                <p class="text-gray-medium text-sm mt-1.5">{contact.email}</p>
               </div>
             </div>
           </div>
@@ -82,14 +83,12 @@ import Layout from '../layouts/Layout.astro';
         <div class="reveal reveal-delay-1">
           <h2 class="text-3xl font-black text-primary tracking-tight mb-10">Kontaktní osoby</h2>
           <div class="space-y-4">
-            <div class="bg-surface rounded-2xl p-6 border border-gray-100">
-              <div class="font-bold text-primary">Jiří Vaníček</div>
-              <p class="text-sm text-gray-medium mt-1">+420 722 929 141</p>
-            </div>
-            <div class="bg-surface rounded-2xl p-6 border border-gray-100">
-              <div class="font-bold text-primary">Vladimír Vaníček</div>
-              <p class="text-sm text-gray-medium mt-1">+420 722 932 884</p>
-            </div>
+            {contact.people.map(person => (
+              <div class="bg-surface rounded-2xl p-6 border border-gray-100">
+                <div class="font-bold text-primary">{person.name}</div>
+                <p class="text-sm text-gray-medium mt-1">{person.phone}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -106,7 +105,7 @@ import Layout from '../layouts/Layout.astro';
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
           <p class="text-sm font-medium">Google Maps</p>
-          <p class="text-xs mt-1">Prof. Seemana 132, Vysoké Veselí</p>
+          <p class="text-xs mt-1">{contact.office.street}, {contact.office.city}</p>
         </div>
       </div>
     </div>

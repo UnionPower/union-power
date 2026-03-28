@@ -1,0 +1,20 @@
+{
+  "pageTitle": "Kdo jsme",
+  "pageDescription": "Česká firma specializující se na výrobu plastových dílů metodou vstřikování.",
+  "history": {
+    "heading": "Naše historie",
+    "paragraphs": [
+      "Společnost Union Power s.r.o. byla založena v roce 2010 s vizí poskytovat kvalitní služby v oblasti zpracování plastů. Od samého počátku klademe důraz na preciznost, spolehlivost a individuální přístup ke každému zákazníkovi.",
+      "Postupně jsme investovali do moderních technologií a rozšířili náš strojní park o výkonné vstřikovací lisy Arburg, které nám umožňují realizovat i náročné projekty. Dnes obsluhujeme zákazníky z automobilového, elektrotechnického a strojírenského průmyslu.",
+      "Naším cílem je být spolehlivým partnerem, který dokáže pružně reagovat na potřeby zákazníků a dodávat kvalitní výrobky v dohodnutých termínech."
+    ]
+  },
+  "company": [
+    { "label": "Obchodní firma", "value": "Union Power s.r.o." },
+    { "label": "IČ", "value": "29092264" },
+    { "label": "Sídlo", "value": "Bartolomějská 305/3, 110 00 Praha 1" },
+    { "label": "Právní forma", "value": "s.r.o." },
+    { "label": "Založení", "value": "6. ledna 2010" },
+    { "label": "Jednatelé", "value": "Jiří Vaníček, Vladimír Vaníček" }
+  ]
+}

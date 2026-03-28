@@ -1,0 +1,96 @@
+backend:
+  name: github
+  repo: UnionPower/union-power
+  branch: main
+  base_url: https://unionpower.cz
+  auth_endpoint: /api/auth
+
+media_folder: public/images
+public_folder: /images
+
+locale: cs
+
+collections:
+  - name: pages
+    label: Stránky
+    files:
+      - name: homepage
+        label: Úvodní stránka
+        file: src/data/homepage.json
+        fields:
+          - { label: "Nadtitulek", name: "subtitle", widget: "string" }
+          - { label: "Nadpis řádek 1", name: "heading1", widget: "string" }
+          - { label: "Nadpis řádek 2", name: "heading2", widget: "string" }
+          - { label: "Nadpis řádek 3 (zlatý)", name: "heading3", widget: "string" }
+          - { label: "Popis", name: "description", widget: "text" }
+          - label: "Statistiky"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Hodnota", name: "value", widget: "string" }
+              - { label: "Popis", name: "label", widget: "string" }
+          - label: "Služby"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Název", name: "title", widget: "string" }
+              - { label: "Popis", name: "description", widget: "text" }
+          - label: "O společnosti"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Nadpis", name: "heading", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+          - label: "Odvětví"
+            name: "industries"
+            widget: "list"
+            fields:
+              - { label: "Název", name: "title", widget: "string" }
+              - { label: "Popis", name: "subtitle", widget: "string" }
+
+      - name: about
+        label: O nás
+        file: src/data/about.json
+        fields:
+          - { label: "Nadpis stránky", name: "pageTitle", widget: "string" }
+          - { label: "Popis stránky", name: "pageDescription", widget: "string" }
+          - label: "Historie"
+            name: "history"
+            widget: "object"
+            fields:
+              - { label: "Nadpis", name: "heading", widget: "string" }
+              - { label: "Odstavce", name: "paragraphs", widget: "list", field: { label: "Text", name: "text", widget: "text" } }
+          - label: "Firemní údaje"
+            name: "company"
+            widget: "list"
+            fields:
+              - { label: "Název", name: "label", widget: "string" }
+              - { label: "Hodnota", name: "value", widget: "string" }
+
+      - name: contact
+        label: Kontakt
+        file: src/data/contact.json
+        fields:
+          - label: "Sídlo"
+            name: "headquarters"
+            widget: "object"
+            fields:
+              - { label: "Název firmy", name: "company", widget: "string" }
+              - { label: "Ulice", name: "street", widget: "string" }
+              - { label: "Město", name: "city", widget: "string" }
+              - { label: "IČ", name: "ico", widget: "string" }
+              - { label: "DIČ", name: "dic", widget: "string" }
+              - { label: "Zápis", name: "register", widget: "string" }
+          - label: "Provozovna"
+            name: "office"
+            widget: "object"
+            fields:
+              - { label: "Ulice", name: "street", widget: "string" }
+              - { label: "Město", name: "city", widget: "string" }
+          - { label: "E-mail", name: "email", widget: "string" }
+          - label: "Kontaktní osoby"
+            name: "people"
+            widget: "list"
+            fields:
+              - { label: "Jméno", name: "name", widget: "string" }
+              - { label: "Telefon", name: "phone", widget: "string" }

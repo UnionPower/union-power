@@ -1,0 +1,19 @@
+{
+  "headquarters": {
+    "company": "Union Power s.r.o.",
+    "street": "Bartolomějská 305/3",
+    "city": "110 00 Praha 1 – Staré Město",
+    "ico": "29092264",
+    "dic": "CZ29092264",
+    "register": "Městský soud v Praze, oddíl C, vložka 164110"
+  },
+  "office": {
+    "street": "Prof. Seemana 132",
+    "city": "507 03 Vysoké Veselí"
+  },
+  "email": "info@unionpower.cz",
+  "people": [
+    { "name": "Jiří Vaníček", "phone": "+420 722 929 141" },
+    { "name": "Vladimír Vaníček", "phone": "+420 722 932 884" }
+  ]
+}

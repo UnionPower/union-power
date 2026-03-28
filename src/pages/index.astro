@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import hp from '../data/homepage.json';
 ---
 
 <Layout title="Lisování plastů a výroba plastových dílů">
@@ -15,17 +16,17 @@ import Layout from '../layouts/Layout.astro';
       <div class="max-w-4xl">
         <div class="flex items-center gap-3 mb-8">
           <span class="w-12 h-px bg-accent"></span>
-          <span class="text-accent text-sm font-semibold uppercase tracking-[0.2em]">Od roku 2010</span>
+          <span class="text-accent text-sm font-semibold uppercase tracking-[0.2em]">{hp.subtitle}</span>
         </div>
 
         <h1 class="text-5xl md:text-6xl lg:text-8xl font-black text-white leading-[0.95] mb-8 tracking-tight">
-          Precizní<br>
-          lisování<br>
-          <span class="text-gradient">plastů</span>
+          {hp.heading1}<br>
+          {hp.heading2}<br>
+          <span class="text-gradient">{hp.heading3}</span>
         </h1>
 
         <p class="text-lg md:text-xl text-white/60 leading-relaxed mb-12 max-w-xl">
-          Vstřikování termoplastů a výroba plastových komponentů pro automobilový, elektrotechnický a strojírenský průmysl.
+          {hp.description}
         </p>
 
         <div class="flex flex-wrap gap-4">
@@ -49,22 +50,12 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-primary-light rounded-2xl -mt-12 relative z-10 shadow-2xl shadow-primary/20">
         <div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
-          <div class="p-8 text-center reveal">
-            <div class="text-3xl md:text-4xl font-black text-accent">15+</div>
-            <div class="text-xs text-white/50 mt-2 uppercase tracking-widest">Let zkušeností</div>
-          </div>
-          <div class="p-8 text-center reveal reveal-delay-1">
-            <div class="text-3xl md:text-4xl font-black text-accent">800t</div>
-            <div class="text-xs text-white/50 mt-2 uppercase tracking-widest">Uzavírací síla</div>
-          </div>
-          <div class="p-8 text-center reveal reveal-delay-2">
-            <div class="text-3xl md:text-4xl font-black text-accent">300+</div>
-            <div class="text-xs text-white/50 mt-2 uppercase tracking-widest">Typů materiálů</div>
-          </div>
-          <div class="p-8 text-center reveal reveal-delay-3">
-            <div class="text-3xl md:text-4xl font-black text-white">CZ</div>
-            <div class="text-xs text-white/50 mt-2 uppercase tracking-widest">Česká výroba</div>
-          </div>
+          {hp.stats.map((stat, i) => (
+            <div class={`p-8 text-center reveal ${i > 0 ? `reveal-delay-${i}` : ''}`}>
+              <div class={`text-3xl md:text-4xl font-black ${i === hp.stats.length - 1 ? 'text-white' : 'text-accent'}`}>{stat.value}</div>
+              <div class="text-xs text-white/50 mt-2 uppercase tracking-widest">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
