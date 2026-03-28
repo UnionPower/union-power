@@ -1,0 +1,214 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Union Power s.r.o. – Lisování plastů, vstřikování termoplastů a výroba plastových dílů.' } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Úvod' },
+  { href: '/o-nas', label: 'O nás' },
+  { href: '/sluzby', label: 'Služby' },
+
+];
+
+function isActive(href: string) {
+  if (href === '/') return currentPath === '/';
+  return currentPath === href || currentPath === href + '/';
+}
+---
+
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <title>{title} | Union Power s.r.o.</title>
+  </head>
+  <body class="min-h-screen flex flex-col bg-white">
+    <!-- Header -->
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-24">
+          <!-- Logo -->
+          <a href="/" class="flex items-center relative z-10">
+            <div class="relative" id="logo-wrapper">
+              <img src="/UnionPowerLogo-gold.png" alt="Union Power" id="logo-gold" class="h-[170px] w-auto transition-all duration-700 gold-glow" />
+              <img src="/UnionPowerLogo.png" alt="Union Power" id="logo-black" class="h-[170px] w-auto transition-all duration-700 absolute inset-0 opacity-0" />
+            </div>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center gap-1">
+            {navLinks.map(link => (
+              <a href={link.href}
+                class:list={[
+                  "relative px-4 py-2 text-sm font-medium tracking-wide uppercase transition-all duration-300",
+                  isActive(link.href)
+                    ? "text-accent"
+                    : "nav-link-color hover:text-accent"
+                ]}>
+                {link.label}
+                {isActive(link.href) && <span class="absolute bottom-0 left-4 right-4 h-0.5 bg-accent rounded-full"></span>}
+              </a>
+            ))}
+            <a href="/kontakt"
+              class="ml-4 bg-accent text-primary px-6 py-2.5 rounded-full text-sm font-semibold uppercase tracking-wide hover:bg-accent-dark transition-all duration-300 hover:shadow-lg hover:shadow-accent/25">
+              Kontakt
+            </a>
+          </nav>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="lg:hidden p-2 relative z-10" aria-label="Menu">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav id="mobile-menu" class="hidden lg:hidden pb-6">
+          <div class="flex flex-col gap-1 bg-white rounded-2xl p-4 shadow-xl border border-gray-100">
+            {navLinks.map(link => (
+              <a href={link.href}
+                class:list={[
+                  "px-4 py-3 rounded-xl text-sm font-medium uppercase tracking-wide transition-colors",
+                  isActive(link.href) ? "bg-accent/10 text-accent" : "hover:bg-gray-50"
+                ]}>
+                {link.label}
+              </a>
+            ))}
+            <a href="/kontakt" class="px-4 py-3 rounded-xl text-sm font-semibold uppercase tracking-wide bg-accent text-primary text-center mt-1">
+              Kontakt
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white relative overflow-hidden">
+      <div class="absolute inset-0 grid-pattern"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+          <!-- Company -->
+          <div class="md:col-span-5">
+            <img src="/UnionPowerLogo-gold.png" alt="Union Power" class="h-14 w-auto mb-6 gold-glow" />
+            <p class="text-white/60 text-sm leading-relaxed max-w-sm">
+              Spolehlivý partner pro lisování plastů a výrobu plastových dílů pro automobilový, elektrotechnický a strojírenský průmysl.
+            </p>
+            <div class="flex items-center gap-2 mt-6">
+              <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+              <span class="text-xs text-white/40 uppercase tracking-widest">Od roku 2010</span>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="md:col-span-3">
+            <h3 class="text-xs font-semibold uppercase tracking-widest text-white/40 mb-6">Navigace</h3>
+            <ul class="space-y-3 text-sm">
+              <li><a href="/" class="text-white/70 hover:text-accent transition-colors duration-300">Úvod</a></li>
+              <li><a href="/o-nas" class="text-white/70 hover:text-accent transition-colors duration-300">O nás</a></li>
+              <li><a href="/sluzby" class="text-white/70 hover:text-accent transition-colors duration-300">Služby</a></li>
+
+              <li><a href="/kontakt" class="text-white/70 hover:text-accent transition-colors duration-300">Kontakt</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="md:col-span-4">
+            <h3 class="text-xs font-semibold uppercase tracking-widest text-white/40 mb-6">Kontakt</h3>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li class="font-semibold text-white">Union Power s.r.o.</li>
+              <li>Bartolomějská 305/3</li>
+              <li>110 00 Praha 1</li>
+              <li class="pt-2">IČ: 29092264</li>
+              <li>DIČ: CZ29092264</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span class="text-xs text-white/30">
+            &copy; {new Date().getFullYear()} Union Power s.r.o.
+          </span>
+          <span class="text-xs text-white/30">
+            Zapsáno v OR u Městského soudu v Praze, oddíl C, vložka 164110
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+
+      // Header scroll effect
+      const header = document.getElementById('site-header');
+      const logoGold = document.getElementById('logo-gold');
+      const logoBlack = document.getElementById('logo-black');
+      let lastScroll = 0;
+
+      function updateHeader() {
+        const scrollY = window.scrollY;
+        if (header) {
+          if (scrollY > 50) {
+            header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+            header.classList.remove('bg-transparent');
+            header.style.setProperty('--nav-color', '#1e293b');
+          } else {
+            header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+            header.classList.add('bg-transparent');
+            header.style.setProperty('--nav-color', '#ffffff');
+          }
+        }
+        if (logoGold && logoBlack) {
+          const scrolled = scrollY > 50;
+          logoGold.classList.toggle('opacity-0', scrolled);
+          logoGold.classList.toggle('gold-glow', !scrolled);
+          logoBlack.classList.toggle('opacity-0', !scrolled);
+          logoGold.classList.toggle('!h-[200px]', scrolled);
+          logoGold.classList.toggle('h-[170px]', !scrolled);
+          logoBlack.classList.toggle('!h-[200px]', scrolled);
+          logoBlack.classList.toggle('h-[170px]', !scrolled);
+        }
+        lastScroll = scrollY;
+      }
+
+      // Set nav link colors based on scroll
+      const style = document.createElement('style');
+      style.textContent = `.nav-link-color { color: var(--nav-color, #ffffff); }`;
+      document.head.appendChild(style);
+
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
+
+      // Scroll reveal
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      reveals.forEach(el => observer.observe(el));
+    </script>
+  </body>
+</html>

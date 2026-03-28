@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0f172a;
+  --color-primary-light: #1e293b;
+  --color-primary-dark: #020617;
+  --color-accent: #d4a012;
+  --color-accent-light: #e6b422;
+  --color-accent-dark: #b8860b;
+  --color-surface: #f8fafc;
+  --color-surface-dark: #f1f5f9;
+  --color-gray-medium: #64748b;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #b8860b 0%, #d4a012 40%, #f0d060 60%, #d4a012 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle grid pattern */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Glow effect */
+.glow-accent {
+  box-shadow: 0 0 40px rgba(212, 160, 18, 0.25), 0 0 80px rgba(240, 208, 96, 0.1);
+}
+
+/* Smooth image hover */
+.img-hover {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-hover:hover {
+  transform: scale(1.02);
+}
+
+/* Counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle pulse for CTA */
+@keyframes subtlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 160, 18, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(212, 160, 18, 0); }
+}
+.pulse-cta {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+/* Gold glow behind gradient text */
+.text-gradient {
+  filter: drop-shadow(0 0 12px rgba(212, 160, 18, 0.4)) drop-shadow(0 0 30px rgba(240, 208, 96, 0.15));
+}
+
+/* Gold glow on all accent-colored text */
+.text-accent {
+  text-shadow: 0 0 12px rgba(212, 160, 18, 0.4), 0 0 30px rgba(240, 208, 96, 0.15);
+}
+
+/* Gold glow on logo */
+.gold-glow {
+  filter: drop-shadow(0 0 12px rgba(212, 160, 18, 0.5)) drop-shadow(0 0 30px rgba(240, 208, 96, 0.2));
+}
+

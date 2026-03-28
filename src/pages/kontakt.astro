@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Kontakt" description="Kontaktujte Union Power s.r.o. – poptávky, dotazy, návštěva provozovny.">
+  <!-- Page Header -->
+  <section class="relative bg-primary pt-28 pb-12 md:pt-32 md:pb-16 overflow-hidden">
+    <div class="absolute inset-0 grid-pattern"></div>
+    <div class="absolute bottom-0 left-1/2 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px]"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="w-12 h-px bg-accent"></span>
+        <span class="text-accent text-sm font-semibold uppercase tracking-[0.2em]">Spojte se s námi</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight">Kontakt</h1>
+      <p class="text-white/50 mt-4 max-w-xl text-lg">
+        Máte dotaz nebo chcete poptávku? Neváhejte nás kontaktovat.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-10 md:py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Left: Sídlo & fakturace -->
+        <div class="reveal">
+          <h2 class="text-3xl font-black text-primary tracking-tight mb-10">Kontaktní údaje</h2>
+
+          <div class="space-y-8">
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-primary text-sm uppercase tracking-wide">Sídlo a fakturační údaje</h3>
+                <p class="text-gray-medium text-sm mt-1.5 leading-relaxed">
+                  Union Power s.r.o.<br>
+                  Bartolomějská 305/3<br>
+                  110 00 Praha 1 – Staré Město
+                </p>
+                <p class="text-gray-medium text-sm mt-3 leading-relaxed">
+                  IČ: 29092264 &nbsp;|&nbsp; DIČ: CZ29092264<br>
+                  <span class="text-xs">Městský soud v Praze, oddíl C, vložka 164110</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-primary text-sm uppercase tracking-wide">Adresa provozovny</h3>
+                <p class="text-gray-medium text-sm mt-1.5 leading-relaxed">
+                  Prof. Seemana 132<br>
+                  507 03 Vysoké Veselí
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 bg-accent/10 rounded-2xl flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-primary text-sm uppercase tracking-wide">E-mail</h3>
+                <p class="text-gray-medium text-sm mt-1.5">info@unionpower.cz</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Persons -->
+        <div class="reveal reveal-delay-1">
+          <h2 class="text-3xl font-black text-primary tracking-tight mb-10">Kontaktní osoby</h2>
+          <div class="space-y-4">
+            <div class="bg-surface rounded-2xl p-6 border border-gray-100">
+              <div class="font-bold text-primary">Jiří Vaníček</div>
+              <p class="text-sm text-gray-medium mt-1">+420 722 929 141</p>
+            </div>
+            <div class="bg-surface rounded-2xl p-6 border border-gray-100">
+              <div class="font-bold text-primary">Vladimír Vaníček</div>
+              <p class="text-sm text-gray-medium mt-1">+420 722 932 884</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map placeholder -->
+  <section class="bg-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="bg-gray-200 rounded-3xl h-96 flex items-center justify-center">
+        <div class="text-center text-gray-medium/40">
+          <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <p class="text-sm font-medium">Google Maps</p>
+          <p class="text-xs mt-1">Prof. Seemana 132, Vysoké Veselí</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
