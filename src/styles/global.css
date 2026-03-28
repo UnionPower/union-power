@@ -83,6 +83,5 @@ body {
 
 /* Gold glow on logo */
 .gold-glow {
-  filter: drop-shadow(0 0 12px rgba(212, 160, 18, 0.5)) drop-shadow(0 0 30px rgba(240, 208, 96, 0.2));
 }
 
