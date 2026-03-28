@@ -81,16 +81,6 @@ body {
   animation: subtlePulse 3s ease-in-out infinite;
 }
 
-/* Gold glow behind gradient text */
-.text-gradient {
-  filter: drop-shadow(0 0 12px rgba(212, 160, 18, 0.4)) drop-shadow(0 0 30px rgba(240, 208, 96, 0.15));
-}
-
-/* Gold glow on all accent-colored text */
-.text-accent {
-  text-shadow: 0 0 12px rgba(212, 160, 18, 0.4), 0 0 30px rgba(240, 208, 96, 0.15);
-}
-
 /* Gold glow on logo */
 .gold-glow {
   filter: drop-shadow(0 0 12px rgba(212, 160, 18, 0.5)) drop-shadow(0 0 30px rgba(240, 208, 96, 0.2));
