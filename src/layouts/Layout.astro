@@ -8,6 +8,8 @@ interface Props {
 
 const { title, description = 'Union Power s.r.o. – Lisování plastů, vstřikování termoplastů a výroba plastových dílů.' } = Astro.props;
 const currentPath = Astro.url.pathname;
+const canonicalURL = new URL(Astro.url.pathname, 'https://www.unionpower.cz').href;
+const fullTitle = `${title} | Union Power s.r.o.`;
 
 const navLinks = [
   { href: '/', label: 'Úvod' },
@@ -28,13 +30,70 @@ function isActive(href: string) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <!-- OG -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://www.unionpower.cz/images/hala2.jpg" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:site_name" content="Union Power s.r.o." />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://www.unionpower.cz/images/hala2.jpg" />
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <title>{title} | Union Power s.r.o.</title>
+    <title>{fullTitle}</title>
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Union Power s.r.o.",
+      "description": "Lisování plastů, vstřikování termoplastů a výroba plastových dílů.",
+      "url": "https://www.unionpower.cz",
+      "logo": "https://www.unionpower.cz/UnionPowerLogo.png",
+      "image": "https://www.unionpower.cz/images/hala2.jpg",
+      "telephone": ["+420 722 929 141", "+420 722 932 884"],
+      "email": "info@unionpower.cz",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Bartolomějská 305/3",
+          "addressLocality": "Praha 1",
+          "postalCode": "110 00",
+          "addressCountry": "CZ"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Prof. Seemana 132",
+          "addressLocality": "Vysoké Veselí",
+          "postalCode": "507 03",
+          "addressCountry": "CZ"
+        }
+      ],
+      "foundingDate": "2010-01-06",
+      "taxID": "CZ29092264",
+      "sameAs": [],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Služby",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Vstřikování termoplastů" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Výroba a údržba forem" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Montáž a kompletace" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kontrola kvality" } }
+        ]
+      }
+    })} />
   </head>
   <body class="min-h-screen flex flex-col bg-white">
     <!-- Header -->
@@ -71,7 +130,7 @@ function isActive(href: string) {
 
           <!-- Mobile menu button -->
           <button id="mobile-menu-btn" class="lg:hidden p-2 relative z-10" aria-label="Menu">
-            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
