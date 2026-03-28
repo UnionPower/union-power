@@ -5,24 +5,57 @@
   "heading3": "plastů",
   "description": "Vstřikování termoplastů a výroba plastových komponentů pro automobilový, elektrotechnický a strojírenský průmysl.",
   "stats": [
-    { "value": "15+", "label": "Let zkušeností" },
-    { "value": "800t", "label": "Uzavírací síla" },
-    { "value": "300+", "label": "Typů materiálů" },
-    { "value": "CZ", "label": "Česká výroba" }
+    {
+      "value": "15+",
+      "label": "Let zkušeností"
+    },
+    {
+      "value": "210t",
+      "label": "Uzavírací síla"
+    },
+    {
+      "value": "300+",
+      "label": "Typů materiálů"
+    },
+    {
+      "value": "CZ",
+      "label": "Česká výroba"
+    }
   ],
   "services": [
-    { "title": "Vstřikování termoplastů", "description": "Výroba plastových dílů na moderních lisech Arburg s uzavírací silou od 50 do 800 tun. Zpracování přes 300 typů materiálů." },
-    { "title": "Nástrojárna", "description": "Vlastní výroba a údržba vstřikovacích forem. Konstrukční návrhy CAD/CAM a technická podpora při vývoji." },
-    { "title": "Kontrola kvality", "description": "Důsledná kontrola v každé fázi výroby. 3D měření, vizuální kontrola a funkční testy každého dílu." }
+    {
+      "title": "Vstřikování termoplastů",
+      "description": "Výroba plastových dílů na moderních lisech Arburg  a Demag s uzavírací silou od 50 do 200 tun. Zpracování přes 300 typů materiálů."
+    },
+    {
+      "title": "Nástrojárna",
+      "description": "Vlastní výroba a údržba vstřikovacích forem. Konstrukční návrhy CAD/CAM a technická podpora při vývoji."
+    },
+    {
+      "title": "Kontrola kvality",
+      "description": "Důsledná kontrola v každé fázi výroby. 3D měření, vizuální kontrola a funkční testy každého dílu."
+    }
   ],
   "about": {
     "heading": "Spolehlivý partner\npro vaši výrobu",
     "text": "Firma Union Power s.r.o. působí na trhu od roku 2010. Specializujeme se na lisování a vstřikování plastů pro průmyslové odběratele. Díky modernímu strojnímu parku Arburg realizujeme zakázky od prototypů po velkosériovou produkci."
   },
   "industries": [
-    { "title": "Automotive", "subtitle": "Automobilový průmysl" },
-    { "title": "Elektrotechnika", "subtitle": "Elektronické komponenty" },
-    { "title": "Strojírenství", "subtitle": "Průmyslové komponenty" },
-    { "title": "Stavebnictví", "subtitle": "Stavební prvky" }
+    {
+      "title": "Automotive",
+      "subtitle": "Automobilový průmysl"
+    },
+    {
+      "title": "Elektrotechnika",
+      "subtitle": "Elektronické komponenty"
+    },
+    {
+      "title": "Strojírenství",
+      "subtitle": "Průmyslové komponenty"
+    },
+    {
+      "title": "Zdravotnictví",
+      "subtitle": "Komponenty pro zdravotnictví"
+    }
   ]
 }
