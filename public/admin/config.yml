@@ -2,7 +2,7 @@ backend:
   name: github
   repo: UnionPower/union-power
   branch: main
-  base_url: https://www.unionpower.cz
+  base_url: https://unionpower.cz
   auth_endpoint: /api/auth
 
 media_folder: public/images
