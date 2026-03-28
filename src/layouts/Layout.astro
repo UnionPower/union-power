@@ -103,8 +103,8 @@ function isActive(href: string) {
           <!-- Logo -->
           <a href="/" class="flex items-center relative z-10">
             <div class="relative" id="logo-wrapper">
-              <img src="/UnionPowerLogo-gold.png" alt="Union Power" id="logo-gold" class="h-[170px] w-auto transition-all duration-700 gold-glow" />
-              <img src="/UnionPowerLogo.png" alt="Union Power" id="logo-black" class="h-[170px] w-auto transition-all duration-700 absolute inset-0 opacity-0" />
+              <img src="/UnionPowerLogo-gold.png" alt="Union Power" id="logo-gold" class="h-[90px] md:h-[170px] w-auto transition-all duration-700 gold-glow" />
+              <img src="/UnionPowerLogo.png" alt="Union Power" id="logo-black" class="h-[90px] md:h-[170px] w-auto transition-all duration-700 absolute inset-0 opacity-0" />
             </div>
           </a>
 
@@ -244,10 +244,10 @@ function isActive(href: string) {
           logoGold.classList.toggle('opacity-0', scrolled);
           logoGold.classList.toggle('gold-glow', !scrolled);
           logoBlack.classList.toggle('opacity-0', !scrolled);
-          logoGold.classList.toggle('!h-[200px]', scrolled);
-          logoGold.classList.toggle('h-[170px]', !scrolled);
-          logoBlack.classList.toggle('!h-[200px]', scrolled);
-          logoBlack.classList.toggle('h-[170px]', !scrolled);
+          logoGold.classList.toggle('!h-[110px] md:!h-[200px]', scrolled);
+          logoGold.classList.toggle('h-[90px] md:h-[170px]', !scrolled);
+          logoBlack.classList.toggle('!h-[110px] md:!h-[200px]', scrolled);
+          logoBlack.classList.toggle('h-[90px] md:h-[170px]', !scrolled);
         }
         lastScroll = scrollY;
       }
