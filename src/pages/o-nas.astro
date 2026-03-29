@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import data from '../data/about.json';
 ---
 
 <Layout title="O nás" description="Poznejte firmu Union Power s.r.o. – český výrobce plastových dílů s více než 15 lety zkušeností.">
@@ -12,9 +13,9 @@ import Layout from '../layouts/Layout.astro';
         <span class="w-12 h-px bg-accent"></span>
         <span class="text-accent text-sm font-semibold uppercase tracking-[0.2em]">O společnosti</span>
       </div>
-      <h1 class="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight">Kdo jsme</h1>
+      <h1 class="text-4xl md:text-5xl lg:text-7xl font-black text-white tracking-tight">{data.pageTitle}</h1>
       <p class="text-white/80 mt-4 max-w-xl text-lg">
-        Česká firma specializující se na výrobu plastových dílů metodou vstřikování.
+        {data.pageDescription}
       </p>
     </div>
   </section>
@@ -24,17 +25,11 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div class="reveal">
-          <h2 class="text-3xl md:text-4xl font-black text-primary tracking-tight mb-8">Naše historie</h2>
+          <h2 class="text-3xl md:text-4xl font-black text-primary tracking-tight mb-8">{data.history.heading}</h2>
           <div class="space-y-5 text-gray-medium leading-relaxed">
-            <p>
-              Společnost <strong class="text-primary">Union Power s.r.o.</strong> byla založena v roce 2010 s vizí poskytovat kvalitní služby v oblasti zpracování plastů. Od samého počátku klademe důraz na preciznost, spolehlivost a individuální přístup ke každému zákazníkovi.
-            </p>
-            <p>
-              Postupně jsme investovali do moderních technologií a rozšířili náš strojní park o výkonné vstřikovací lisy Arburg, které nám umožňují realizovat i náročné projekty. Dnes obsluhujeme zákazníky z automobilového, elektrotechnického a strojírenského průmyslu.
-            </p>
-            <p>
-              Naším cílem je být spolehlivým partnerem, který dokáže pružně reagovat na potřeby zákazníků a dodávat kvalitní výrobky v dohodnutých termínech.
-            </p>
+            {data.history.paragraphs.map(p => (
+              <p>{p}</p>
+            ))}
           </div>
         </div>
 
