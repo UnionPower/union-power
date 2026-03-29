@@ -45,12 +45,14 @@ body {
   background-clip: text;
 }
 
-/* Subtle grid pattern */
-.grid-pattern {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+/* Subtle grid pattern - desktop only for performance */
+@media (min-width: 768px) {
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
 }
 
 /* Glow effect */

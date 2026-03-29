@@ -5,12 +5,12 @@ import hp from '../data/homepage.json';
 
 <Layout title="Lisování plastů a výroba plastových dílů">
   <!-- Hero Section -->
-  <section class="relative min-h-[60vh] flex items-center bg-primary overflow-hidden">
+  <section class="relative flex items-center bg-primary overflow-hidden">
     <!-- Background pattern -->
     <div class="absolute inset-0 grid-pattern"></div>
-    <!-- Gradient orbs -->
-    <div class="absolute top-1/4 -right-32 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px]"></div>
-    <div class="absolute bottom-0 -left-32 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px]"></div>
+    <!-- Gradient orbs - hidden on mobile for performance -->
+    <div class="hidden md:block absolute top-1/4 -right-32 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px]"></div>
+    <div class="hidden md:block absolute bottom-0 -left-32 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px]"></div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-36 pb-16 md:pb-20 w-full">
       <div class="max-w-4xl">
@@ -161,7 +161,7 @@ import hp from '../data/homepage.json';
   <!-- CTA -->
   <section class="relative py-10 md:py-14 bg-primary overflow-hidden">
     <div class="absolute inset-0 grid-pattern"></div>
-    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px]"></div>
+    <div class="hidden md:block absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px]"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
       <span class="text-accent text-sm font-semibold uppercase tracking-[0.2em]">Spolupráce</span>
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mt-4 tracking-tight">
