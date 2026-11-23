@@ -6,7 +6,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Union Power s.r.o. – Lisování plastů, vstřikování termoplastů a výroba plastových dílů.' } = Astro.props;
+const { title, description = 'Vstřikování termoplastů a výroba plastových dílů pro automotive, elektrotechniku a strojírenství. Česká výroba od roku 2010, lisy Arburg 50–200 t.' } = Astro.props;
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(Astro.url.pathname, 'https://www.unionpower.cz').href;
 const fullTitle = `${title} | Union Power s.r.o.`;
@@ -278,6 +278,9 @@ function isActive(href: string) {
         });
       }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
       reveals.forEach(el => observer.observe(el));
+    </script>
+    <script>
+      (function(){let v:string|null=null;function c(){fetch('/version.json',{cache:'no-store'}).then(r=>r.json()).then((d:{v:string})=>{if(d.v==='dev')return;if(v===null){v=d.v;return;}if(d.v!==v)location.reload();}).catch(()=>{});}c();setInterval(c,30000);})();
     </script>
   </body>
 </html>
